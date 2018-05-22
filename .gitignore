@@ -7,3 +7,4 @@ gradlew.bat
 gradle/
 bin/
 .classpath
+src/main/java/hibernate.cfg.out.xml

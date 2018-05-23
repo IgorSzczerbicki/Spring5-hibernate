@@ -13,7 +13,7 @@ public class CreateStudent {
 		Session session = factory.getCurrentSession();
 		
 		try {
-			Student tmpStudent = new Student("Jan", "Kowalski", "jk@gmail.com");
+			Student tmpStudent = new Student("Rafal", "Kloc", "rk@outlook.com");
 			session.beginTransaction();
 			session.save(tmpStudent);
 			session.getTransaction().commit();

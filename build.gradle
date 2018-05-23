@@ -44,6 +44,7 @@ dependencies {
 	compile 'org.hibernate:hibernate-validator:6.0.10.Final'
 	compile 'org.hibernate:hibernate-core:5.2.17.Final'
 	compile 'mysql:mysql-connector-java:8.0.11'
+	compile 'log4j:log4j:1.2.17'
 	def junitVersion = '5.0.3'
     testCompile 'org.junit.jupiter:junit-jupiter-api:' + junitVersion
     testCompile 'org.junit.jupiter:junit-jupiter-engine:' + junitVersion

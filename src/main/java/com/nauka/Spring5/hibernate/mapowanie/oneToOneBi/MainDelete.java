@@ -25,6 +25,7 @@ public class MainDelete {
 			if (instructorDetail != null) session.delete(instructorDetail);
 			session.getTransaction().commit();
 		} finally {
+			session.close();
 			factory.close();
 		}
 	}

@@ -4,7 +4,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-public class Main {
+public class MainDeleteNoCascadeForDelete {
 
 	public static void main(String[] args) {
 		
@@ -17,11 +17,13 @@ public class Main {
 		
 		try {
 			session.beginTransaction();
-			Instructor instructor = new Instructor("Jan", "Kowal", "jk@gmail.com");
-			InstructorDetail instructorDetail = new InstructorDetail("youtube", "hobby");
-			instructor.setInstructorDetail(instructorDetail);
+			InstructorDetail instructorDetail = session.get(InstructorDetail.class, 3);
+			instructorDetail.getInstructor().setInstructorDetail(null);
 			
-			session.save(instructor);
+			System.out.println(instructorDetail);
+			System.out.println(instructorDetail.getInstructor());
+			
+			if (instructorDetail != null) session.delete(instructorDetail);
 			session.getTransaction().commit();
 		} finally {
 			session.close();
